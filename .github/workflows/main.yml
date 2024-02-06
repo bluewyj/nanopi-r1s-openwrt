@@ -29,7 +29,7 @@ jobs:
     - name: Clone Source
       run: |
         cd "/home/runner"
-        git clone --branch "openwrt-18.06" --single-branch "https://github.com/immortalwrt/immortalwrt" "immortalwrt"
+        git clone --branch "openwrt-23.05.1" --single-branch "https://github.com/immortalwrt/immortalwrt" "immortalwrt"
         sudo chown -R runner:runner "immortalwrt"
         cd "/home/runner/immortalwrt"
         ./scripts/feeds update -a
@@ -67,7 +67,7 @@ jobs:
         name: immortalwrt-23.05.1-sunxi-cortexa53-friendlyarm_nanopi-r1s-h5-squashfs-sdcard.img.gz
         path: /home/runner/immortalwrt-23.05.1-sunxi-cortexa53-friendlyarm_nanopi-r1s-h5-squashfs-sdcard.img.gz
   Cleanup-Old-Artifacts:
-    needs: ImmortalWrt-18_06
+    needs: ImmortalWrt-23_05_1
     runs-on: ubuntu-20.04
     steps:
     - name: Cleanup Old Action Artifacts
